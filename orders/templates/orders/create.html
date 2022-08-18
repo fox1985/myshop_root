@@ -14,14 +14,14 @@
 
                 <li>
                     {{ item.quantity }} x  {{ item.product.name }}
-                    <span> цена $ {{ item.total_price	}}</span>
+                  	<span>${{ item.total_price }}</span>
+
                 </li>
 
             {%	endfor	%}
-
-                 ${{ cart.get_total_price }}
-
 				</ul>
+            <p>Общий: ${{ cart.get_total_price }}</p>
+
 
 		</div>
 		<form action="" method="post" class="order-form">
