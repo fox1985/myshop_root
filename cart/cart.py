@@ -54,10 +54,10 @@ class Cart(object):
         """Возвращает общее количество товаров в корзине."""
         return sum(item['quantity'] for item in self.cart.values())
 
-    def get_total(self):
+    def get_total_price(self):
         return  sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values())
 
-    def crear(self):
+    def clear(self):
         # Очистика корзины
         del self.session[settings.CART_SESSION_ID]
         self.save()

@@ -42,18 +42,20 @@
            </tr>
         {% endwith %}
 
-          <tr class="total">
+      {% endfor %}
+
+      <tr class="total">
         <td>Общий</td>
         <td colspan="4"></td>
-        <td class="num">${{ item.total_price }}</td>
-      {% endfor %}
+      	<td	class="num">${{ cart.get_total_price }}</td>
 
       </tr>
     </tbody>
   </table>
   <p class="text-right">
     <a href="{% url "shop:product_list" %}" class="button light">Продолжайте ходить по магазинам</a>
-    <a href="#" class="button">Проверка</a>
+
+    <a href="{% url "orders:order_create" %}" class="button">Проверка</a>
   </p>
 
 {% endblock %}
