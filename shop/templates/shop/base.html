@@ -15,19 +15,22 @@
 
 <div id="subheader">
      <div class="cart">
+      {% for item in cart %}
         {% with total_items=cart|length %}
         {% if cart|length > 0 %}
             Ваша корзина:
         <a href="{% url "cart:cart_detail" %}">
-            	{{ total_items }}  {{ total_items|pluralize }},
+            	{{ total_items }}
 
                 {{ cart.get_total_price }}
+                $ {{ item.total_price }}
         </a>
+
         {% else %}
         Ваша корзина пуста
         {% endif %}
         {% endwith %}
-
+        {% endfor %}
     </div>
 
 </div>
