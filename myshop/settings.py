@@ -143,3 +143,5 @@ MEDIA_URL = '/media/'
 #Хранение данных корзины в сессии
 CART_SESSION_ID = 'cart'
 
+#отправке писем	в консоль
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
